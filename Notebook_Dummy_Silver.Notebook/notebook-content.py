@@ -72,6 +72,8 @@ silver_df.write.mode("overwrite").format("delta").saveAsTable("silver_customers"
 print(f"Silver row count: {silver_df.count()}")
 display(silver_df.limit(10))
 
+
+# flow test 2 - edited from VS Code
 # METADATA ********************
 
 # META {
