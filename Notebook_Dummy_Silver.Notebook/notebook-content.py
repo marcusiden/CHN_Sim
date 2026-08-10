@@ -36,7 +36,7 @@
 {
     "defaultLakehouse": {
         "name": {
-            "variableName": "$(/**/Variables_Test/lakehouse_name)"
+            "variableName": "$(/**/Variables_Test/Lakehouse_Name)"
         }
     }
 }
