@@ -33,6 +33,17 @@
 # META   "language_group": "synapse_pyspark"
 # META }
 
+
+# CELL ********************
+%%configure
+{
+    "defaultLakehouse": {
+        "name": {
+            "variableName": "$(/**/Variables_Test/lakehouse_name)"
+        }
+    }
+}
+
 # CELL ********************
 
 from pyspark.sql.functions import col, when, upper, current_timestamp
