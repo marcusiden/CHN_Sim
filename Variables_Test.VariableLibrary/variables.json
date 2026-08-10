@@ -6,6 +6,12 @@
       "note": "",
       "type": "String",
       "value": "DEV"
+    },
+    {
+      "name": "Lakehouse_Name",
+      "note": "",
+      "type": "String",
+      "value": "LH_Test"
     }
   ]
 }
