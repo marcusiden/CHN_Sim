@@ -37,6 +37,16 @@
 
 from pyspark.sql.functions import col, when, upper, current_timestamp
 
+
+import notebookutils
+
+env = notebookutils.variableLibrary.get("environment_name")
+print(f"Kjører i miljø: {env}")
+
+# skriv den inn i dataene så du ser det i tabellen etterpå
+from pyspark.sql.functions import lit
+silver_df = silver_df.withColumn("env_stamp", lit(env))
+
 # --- Silver layer: read bronze, clean, enrich, write ---
 
 # 1. Read the bronze table (resolves to the attached lakehouse)
