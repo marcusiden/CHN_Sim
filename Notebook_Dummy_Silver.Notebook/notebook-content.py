@@ -42,13 +42,6 @@ import notebookutils
 
 from pyspark.sql.functions import lit
 
-vl = notebookutils.variableLibrary.getLibrary("Variables_Test")
-env = vl.Environment_Name
-print(f"Kjører i miljø: {env}")
-
-# skriv den inn i dataene så du ser det i tabellen etterpå
-from pyspark.sql.functions import lit
-silver_df = silver_df.withColumn("env_stamp", lit(env))
 
 # --- Silver layer: read bronze, clean, enrich, write ---
 
