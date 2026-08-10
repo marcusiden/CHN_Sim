@@ -82,7 +82,7 @@ silver_df = silver_df.withColumn("env_stamp", lit(env))
 
 
 # 3. Write to the silver table (overwrite for idempotent re-runs)
-silver_df.write.mode("overwrite").format("delta").saveAsTable("silver_customers")
+silver_df.write.mode("overwrite").option("overwriteSchema", "true").format("delta").saveAsTable("silver_customers")
 
 print(f"Silver row count: {silver_df.count()}")
 display(silver_df.limit(10))
