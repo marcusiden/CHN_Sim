@@ -40,7 +40,7 @@ from pyspark.sql.functions import col, when, upper, current_timestamp
 
 import notebookutils
 
-vl = notebookutils.variableLibrary.getLibrary("Varables_Test")
+vl = notebookutils.variableLibrary.getLibrary("Variables_Test")
 env = vl.Environment_Name
 print(f"Kjører i miljø: {env}")
 
