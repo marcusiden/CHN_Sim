@@ -1,45 +1,17 @@
 # Fabric notebook source
 
-# METADATA ********************
-
-# META {
-# META   "kernel_info": {
-# META     "name": "synapse_pyspark"
-# META   },
-# META   "dependencies": {
-# META     "lakehouse": {
-# META       "default_lakehouse": "bb4d4cae-c0c5-47f0-adde-472e7e14a105",
-# META       "default_lakehouse_name": "LH_Test",
-# META       "default_lakehouse_workspace_id": "dbf1b9ba-3e30-4af4-b189-5c59cce4666f",
-# META       "known_lakehouses": [
-# META         {
-# META           "id": "bb4d4cae-c0c5-47f0-adde-472e7e14a105"
-# META         }
-# META       ]
-# META     }
-# META   }
-# META }
-
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
 
 # CELL ********************
 
-%%configure
-
-{
-    "defaultLakehouse": {
-        "name": {
-            "variableName": "$(/**/Variables_Test/Lakehouse_Name)"
-        }
-    }
-}
+# MAGIC %%configure
+# MAGIC 
+# MAGIC {
+# MAGIC     "defaultLakehouse": {
+# MAGIC         "name": {
+# MAGIC             "variableName": "$(/**/Variables_Test/Lakehouse_Name)"
+# MAGIC         }
+# MAGIC     }
+# MAGIC }
 
 # CELL ********************
 
