@@ -40,13 +40,8 @@ from pyspark.sql.functions import col, when, upper, current_timestamp
 
 import notebookutils
 
-vl = notebookutils.variableLibrary.getLibrary("Variables_Test")
-env = vl.Environment_Name
-print(f"Kjører i miljø: {env}")
-
-# skriv den inn i dataene så du ser det i tabellen etterpå
 from pyspark.sql.functions import lit
-silver_df = silver_df.withColumn("env_stamp", lit(env))
+
 
 # --- Silver layer: read bronze, clean, enrich, write ---
 
@@ -76,6 +71,15 @@ silver_df = (
     # Drop any rows with a null country (basic data-quality gate)
     .filter(col("country").isNotNull())
 )
+
+
+vl = notebookutils.variableLibrary.getLibrary("Variables_Test")
+env = vl.Environment_Name
+print(f"Kjører i miljø: {env}")
+
+# skriv den inn i dataene så du ser det i tabellen etterpå
+silver_df = silver_df.withColumn("env_stamp", lit(env))
+
 
 # 3. Write to the silver table (overwrite for idempotent re-runs)
 silver_df.write.mode("overwrite").format("delta").saveAsTable("silver_customers")
